@@ -32,54 +32,116 @@ export type Service = {
   seoTitle: string;
   seoDescription: string;
   keywords: string[];
+  whyHeading?: string;
+  install?: {
+    label: string;
+    title: string;
+    steps: { number: string; title: string; description: string }[];
+  };
+  expansion?: {
+    label: string;
+    title: string;
+    description: string;
+    items: string[];
+  };
 };
 
 export const services: Service[] = [
   {
     slug: "internet-installation",
-    title: "Internet & Wi-Fi Solutions",
+    title: "Starlink Internet & Wi-Fi Solutions",
     shortTitle: "Internet Installation",
     navLabel: "Internet Installation",
-    cardTitle: "Internet & Wi-Fi Solutions",
+    cardTitle: "Starlink Internet & Wi-Fi Solutions",
     icon: "wifi",
     href: "/services/internet-installation",
-    quoteValue: "Internet Installation",
+    quoteValue: "Starlink Installation",
     summary:
-      "Internet installation, Starlink setup, router configuration, and Wi-Fi coverage for homes, offices, campuses, and remote sites.",
+      "Professional Starlink installation, dish mounting, router setup, and Wi-Fi coverage for homes, businesses, schools, churches, farms, campuses, and remote sites.",
     description:
-      "PA Tech Services designs and installs practical internet and Wi-Fi systems for homes, businesses, schools, churches, farms, and organizations across Liberia. From a single router to wider wireless coverage and outdoor links, the goal is dependable connectivity that matches the location.",
+      "PA Tech Services provides professional Starlink installation and Wi-Fi solutions for homes, businesses, schools, churches, farms, campuses, and organizations across Liberia. From positioning and mounting your Starlink equipment to configuring routers, extending Wi-Fi coverage, and connecting multiple buildings, we help turn your Starlink connection into a reliable network for your location.",
     offerings: [
-      "Internet installation",
-      "Starlink installation",
-      "Router installation",
-      "Wireless networking",
-      "Wi-Fi optimization",
-      "Wi-Fi extension",
-      "Business connectivity",
-      "Point-to-point wireless links",
-      "Internet troubleshooting",
+      "Professional Starlink installation",
+      "Starlink dish mounting and positioning",
+      "Finding a clear view of the sky",
+      "Starlink router setup",
+      "Wi-Fi setup and optimization",
+      "Extending Starlink Wi-Fi coverage",
+      "Mesh Wi-Fi installation",
+      "Connecting homes, businesses, schools, churches, farms, campuses, and remote sites",
+      "Outdoor wireless links",
+      "Point-to-point connections",
+      "Network configuration",
+      "Troubleshooting and ongoing support",
     ],
     benefits: [
-      "Coverage planned around the building or site",
-      "Starlink and wireless options for areas with limited wired internet",
-      "Router setup that is easier to manage day to day",
-      "Support when the connection needs attention",
+      "A practical internet option where wired service is limited, unreliable, or unavailable",
+      "Dish mounting and positioning planned for a clear view of the sky",
+      "Starlink router setup plus Wi-Fi that can cover a home, office, or larger site",
+      "Coverage can be extended with mesh Wi-Fi, outdoor links, or point-to-point connections",
+      "Support for installation, network configuration, troubleshooting, and day-to-day use",
     ],
     suitedFor: [
-      "Homes with weak or incomplete Wi-Fi coverage",
-      "Offices that need stable business internet",
-      "Schools, campuses, and churches",
-      "Farms and sites that need outdoor wireless links",
+      "Homes that need Starlink internet and dependable Wi-Fi throughout the property",
+      "Businesses connecting offices, shops, and work sites",
+      "Schools, churches, farms, and campuses covering one building or several",
+      "Remote sites and organizations that need outdoor wireless or point-to-point links",
     ],
-    image: images.wifi,
-    seoTitle: "Internet Installation Liberia | Wi-Fi & Starlink Setup",
+    image: images.starlinkInstall,
+    seoTitle: "Starlink Installation Liberia | Starlink Internet & Wi-Fi Solutions",
     seoDescription:
-      "Internet installation, Starlink setup, router configuration, and Wi-Fi coverage for homes and businesses in Liberia. Serving Monrovia, Brewerville, and surrounding areas.",
+      "Professional Starlink installation in Liberia, including dish mounting, sky-view positioning, router setup, Wi-Fi optimization, mesh coverage, and outdoor wireless links.",
     keywords: [
-      "Internet installation Liberia",
-      "Wi-Fi installation Liberia",
       "Starlink installation Liberia",
+      "Starlink Wi-Fi Liberia",
+      "Wi-Fi installation Liberia",
+      "Mesh Wi-Fi Liberia",
     ],
+    whyHeading: "Why choose Starlink?",
+    install: {
+      label: "How we install Starlink",
+      title: "How we install Starlink",
+      steps: [
+        {
+          number: "01",
+          title: "Site assessment",
+          description:
+            "We review the property, mounting options, and whether the dish can get a clear view of the sky.",
+        },
+        {
+          number: "02",
+          title: "Dish mounting and positioning",
+          description:
+            "We mount and position the Starlink dish so it sits securely and has an unobstructed view of the sky.",
+        },
+        {
+          number: "03",
+          title: "Router and Wi-Fi setup",
+          description:
+            "We set up the Starlink router, configure Wi-Fi, and connect the network for how the site is used.",
+        },
+        {
+          number: "04",
+          title: "Coverage and support",
+          description:
+            "We extend coverage with mesh Wi-Fi or outdoor links where needed, then test, configure, and support the system.",
+        },
+      ],
+    },
+    expansion: {
+      label: "Wi-Fi coverage & expansion",
+      title: "Wi-Fi coverage & expansion",
+      description:
+        "A working Starlink dish is only the start. We help you use that connection throughout the property — from a single building to multiple structures on the same site.",
+      items: [
+        "Wi-Fi setup and optimization",
+        "Extending Starlink Wi-Fi coverage",
+        "Mesh Wi-Fi installation",
+        "Outdoor wireless links",
+        "Point-to-point connections",
+        "Network configuration for homes, offices, and multi-building sites",
+      ],
+    },
   },
   {
     slug: "cctv-security",
@@ -93,22 +155,26 @@ export const services: Service[] = [
     summary:
       "Indoor and outdoor CCTV systems with recording, remote viewing, and professional camera installation.",
     description:
-      "PA Tech Services installs CCTV and security camera systems for homes, shops, offices, schools, farms, and commercial properties. Systems can include indoor cameras, outdoor cameras, recording equipment, and remote viewing on a phone so property owners can see what is happening when they are away.",
+      "PA Tech Services installs CCTV and security camera systems for homes, shops, offices, schools, farms, and commercial properties. Work can include indoor and outdoor cameras, IP cameras, NVR/DVR recording, camera positioning, remote phone viewing, and maintenance or troubleshooting after installation.",
     offerings: [
+      "CCTV installation",
       "Indoor cameras",
       "Outdoor cameras",
-      "IP camera systems",
-      "NVR/DVR installation",
-      "Remote mobile viewing",
-      "Camera maintenance",
+      "IP cameras",
+      "NVR/DVR systems",
+      "Remote phone viewing",
+      "Camera positioning",
+      "Recording setup",
+      "Home and business surveillance",
       "Camera system upgrades",
-      "Business surveillance systems",
+      "Maintenance and troubleshooting",
     ],
     benefits: [
       "Camera placement planned for the property",
-      "Indoor and outdoor coverage options",
-      "Recording systems for later review",
+      "Indoor and outdoor coverage options, including IP cameras",
+      "NVR/DVR recording setup for later review",
       "Remote viewing from a phone where the system supports it",
+      "Maintenance and troubleshooting after installation",
     ],
     suitedFor: [
       "Homes and residential compounds",
@@ -116,10 +182,10 @@ export const services: Service[] = [
       "Schools and churches",
       "Farms and commercial sites",
     ],
-    image: images.security,
+    image: images.cctvInstall,
     seoTitle: "CCTV Installation Liberia | Security Cameras",
     seoDescription:
-      "CCTV camera installation in Liberia for homes and businesses, including indoor and outdoor cameras, NVR/DVR systems, and remote mobile viewing.",
+      "CCTV camera installation in Liberia for homes and businesses, including indoor and outdoor cameras, IP cameras, NVR/DVR systems, remote phone viewing, and maintenance.",
     keywords: [
       "CCTV installation Liberia",
       "CCTV cameras Liberia",

@@ -17,6 +17,8 @@ type ServicePageProps = {
 
 export function ServicePage({ service }: ServicePageProps) {
   const related = services.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const installSteps = service.install?.steps ?? processSteps;
+  const installLabel = service.install?.label ?? "How we typically work";
 
   return (
     <>
@@ -40,7 +42,9 @@ export function ServicePage({ service }: ServicePageProps) {
                 </li>
               ))}
             </ul>
-            <h3 className="mt-12 font-serif text-3xl">Why customers request this</h3>
+            <h3 className="mt-12 font-serif text-3xl">
+              {service.whyHeading ?? "Why customers request this"}
+            </h3>
             <ul className="mt-6 space-y-3">
               {service.benefits.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm leading-relaxed text-muted">
@@ -62,6 +66,47 @@ export function ServicePage({ service }: ServicePageProps) {
         </Container>
       </section>
 
+      {service.install ? (
+        <section className="bg-near py-20 text-offwhite">
+          <Container>
+            <SectionLabel>{installLabel}</SectionLabel>
+            <EditorialHeading size="md" className="mt-5">
+              {service.install.title}
+            </EditorialHeading>
+            <ol className="mt-10 grid gap-8 md:grid-cols-4">
+              {installSteps.map((step) => (
+                <li key={step.number} className="border-t border-line pt-6">
+                  <p className="font-serif text-4xl text-offwhite/30">{step.number}</p>
+                  <h3 className="mt-4 text-lg">{step.title}</h3>
+                  <p className="mt-2 text-sm text-muted">{step.description}</p>
+                </li>
+              ))}
+            </ol>
+          </Container>
+        </section>
+      ) : null}
+
+      {service.expansion ? (
+        <section className="bg-black py-20 text-offwhite">
+          <Container>
+            <SectionLabel>{service.expansion.label}</SectionLabel>
+            <EditorialHeading size="md" className="mt-5 max-w-3xl">
+              {service.expansion.title}
+            </EditorialHeading>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted">
+              {service.expansion.description}
+            </p>
+            <ul className="mt-8 grid gap-0 sm:grid-cols-2">
+              {service.expansion.items.map((item) => (
+                <li key={item} className="border-t border-line py-4 text-sm text-offwhite/80">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Container>
+        </section>
+      ) : null}
+
       <section className="bg-near py-20 text-offwhite">
         <Container>
           <SectionLabel>A good fit for</SectionLabel>
@@ -80,20 +125,22 @@ export function ServicePage({ service }: ServicePageProps) {
         </Container>
       </section>
 
-      <section className="bg-black py-20 text-offwhite">
-        <Container>
-          <SectionLabel>How we typically work</SectionLabel>
-          <ol className="mt-10 grid gap-8 md:grid-cols-4">
-            {processSteps.map((step) => (
-              <li key={step.number} className="border-t border-line pt-6">
-                <p className="font-serif text-4xl text-offwhite/30">{step.number}</p>
-                <h3 className="mt-4 text-lg">{step.title}</h3>
-                <p className="mt-2 text-sm text-muted">{step.description}</p>
-              </li>
-            ))}
-          </ol>
-        </Container>
-      </section>
+      {service.install ? null : (
+        <section className="bg-black py-20 text-offwhite">
+          <Container>
+            <SectionLabel>{installLabel}</SectionLabel>
+            <ol className="mt-10 grid gap-8 md:grid-cols-4">
+              {installSteps.map((step) => (
+                <li key={step.number} className="border-t border-line pt-6">
+                  <p className="font-serif text-4xl text-offwhite/30">{step.number}</p>
+                  <h3 className="mt-4 text-lg">{step.title}</h3>
+                  <p className="mt-2 text-sm text-muted">{step.description}</p>
+                </li>
+              ))}
+            </ol>
+          </Container>
+        </section>
+      )}
 
       <section className="bg-near py-20 text-offwhite">
         <Container>

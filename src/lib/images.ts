@@ -63,6 +63,18 @@ export const images = {
     width: 1400,
     height: 933,
   },
+  starlinkInstall: {
+    src: "/service-images/starlink.jpg",
+    alt: "Starlink satellite dish professionally mounted outdoors with a clear view of the sky",
+    width: 4000,
+    height: 3000,
+  },
+  cctvInstall: {
+    src: "/service-images/cctv.jpg",
+    alt: "Outdoor CCTV security cameras professionally installed on a building corner",
+    width: 5184,
+    height: 3456,
+  },
   alarm: {
     src: unsplash("photo-1558002038-1055907df827", 1400),
     alt: "Security keypad used for alarm system installation and access control",
