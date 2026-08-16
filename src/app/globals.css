@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-black: #050505;
+  --color-near: #0a0a0a;
+  --color-charcoal: #111111;
+  --color-soft: #171717;
+  --color-offwhite: #f4f4ef;
+  --color-muted: #a6a6a0;
+  --color-line: rgb(255 255 255 / 0.14);
+  --color-line-dark: rgb(5 5 5 / 0.12);
+  --color-lime: #b7f21a;
+  --color-whatsapp: #25d366;
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-instrument);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: #050505;
+  color: #f4f4ef;
+  font-family: var(--font-inter), Inter, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in srgb, #b7f21a 45%, black);
+  color: #050505;
+}
+
+:focus-visible {
+  outline: 2px solid #b7f21a;
+  outline-offset: 3px;
+}
+
+.img-cinematic {
+  object-fit: cover;
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.hero-zoom {
+  animation: hero-zoom 22s ease-out forwards;
+}
+
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-zoom {
+    animation: none;
+  }
+}
